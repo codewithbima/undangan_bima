@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The Wedding of Bima Tri Yuda, S.Kom & Ayu Lestari Ningrum, S.Pd.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="locked">
+
+<!-- COVER -->
+<section id="cover">
+  <svg class="joglo" viewBox="0 0 400 200" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2"><path d="M20 120 L120 70 L200 20 L280 70 L380 120 Z"/><path d="M60 120 L140 85 L200 50 L260 85 L340 120"/><path d="M70 120 V190 M130 120 V190 M270 120 V190 M330 120 V190"/><path d="M40 190 H360"/></g></svg>
+  <div class="cover-box">
+    <p class="small">The Wedding of</p>
+    <h1><span data-b="groomNick"></span><i>&amp;</i><span data-b="brideNick"></span></h1>
+    <p class="date" data-b="coverDate"></p>
+    <div class="guest"><p>Kepada Yth. Bapak/Ibu/Saudara/i</p><h2 id="guestName">Tamu Undangan</h2></div>
+    <button id="openBtn" class="btn pulse">Buka Undangan</button>
+  </div>
+</section>
+
+<main id="main" hidden>
+<header class="hero"><p class="small">Undangan Pernikahan</p><h1><span data-b="groomNick"></span> <i>&amp;</i> <span data-b="brideNick"></span></h1><p data-b="coverDate"></p></header>
+
+<section id="pembukaan" class="sec rv">
+  <p class="arab big">بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ</p>
+  <div class="card">
+    <p class="arab">وَمِنْ آيَاتِهِ أَنْ خَلَقَ لَكُم مِّنْ أَنفُسِكُمْ أَزْوَاجًا لِّتَسْكُنُوا إِلَيْهَا وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً ۚ إِنَّ فِي ذَٰلِكَ لَآيَاتٍ لِّقَوْمٍ يَتَفَكَّرُونَ</p>
+    <p class="translit"><i>Wa min āyātihī an khalaqa lakum min anfusikum azwājan litaskunū ilayhā wa ja‘ala baynakum mawaddatan wa raḥmah, inna fī dhālika la-āyātin liqawmin yatafakkarūn.</i></p>
+    <p>“Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antara kamu rasa kasih dan sayang. Sungguh, pada yang demikian itu benar-benar terdapat tanda-tanda (kebesaran Allah) bagi kaum yang berpikir.”</p>
+    <p class="ref">QS. Ar-Rum [30]: 21</p>
+  </div>
+</section>
+
+<section id="salam" class="sec rv">
+  <h2>Assalamu’alaikum Warahmatullahi Wabarakatuh</h2>
+  <p>Dengan memohon rahmat dan ridha Allah SWT, kami bermaksud menyelenggarakan pernikahan putra-putri kami. Merupakan kehormatan dan kebahagiaan bagi kami apabila Bapak/Ibu/Saudara/i berkenan hadir untuk memberikan doa restu.</p>
+</section>
+
+<section id="mempelai" class="sec rv">
+  <h2>Mempelai</h2>
+  <div class="couple">
+    <figure class="person"><div class="photo" data-photo="groomPhoto"></div><h3 data-b="groomFull"></h3><p>Putra dari<br><span data-b="groomParents"></span></p></figure>
+    <div class="amp">&amp;</div>
+    <figure class="person"><div class="photo" data-photo="bridePhoto"></div><h3 data-b="brideFull"></h3><p>Putri dari<br><span data-b="brideParents"></span></p></figure>
+  </div>
+</section>
+
+<section id="acara" class="sec rv">
+  <h2>Rangkaian Acara</h2>
+  <div class="events" id="events"></div>
+</section>
+
+<section id="hitungmundur" class="sec rv">
+  <h2>Menuju Hari Bahagia</h2>
+  <div class="count" id="count"></div>
+</section>
+
+<section id="galeri" class="sec rv">
+  <h2>Galeri</h2>
+  <div class="gallery" id="gallery"></div>
+</section>
+
+<section id="kisah" class="sec rv">
+  <h2>Kisah Kami</h2>
+  <ol class="timeline" id="story"></ol>
+</section>
+
+<section id="info" class="sec rv">
+  <h2>Informasi Tamu</h2>
+  <div class="card" id="infoBox"></div>
+</section>
+
+<section id="rsvp" class="sec rv">
+  <h2>Konfirmasi Kehadiran</h2>
+  <form id="rsvpForm" class="card form" novalidate>
+    <label>Nama<input name="name" required minlength="2" maxlength="60" autocomplete="name"></label>
+    <label>Kehadiran<select name="status" required><option value="">Pilih…</option><option>Hadir</option><option>Tidak hadir</option><option>Masih ragu</option></select></label>
+    <label>Jumlah orang<input name="count" type="number" min="1" max="10" value="1" required></label>
+    <button class="btn" type="submit">Kirim Konfirmasi</button>
+    <p class="msg" id="rsvpMsg" role="status"></p>
+  </form>
+</section>
+
+<section id="ucapan" class="sec rv">
+  <h2>Ucapan &amp; Doa</h2>
+  <form id="wishForm" class="card form" novalidate>
+    <label>Nama<input name="name" required minlength="2" maxlength="60"></label>
+    <label>Ucapan &amp; doa<textarea name="text" rows="3" required minlength="3" maxlength="300"></textarea></label>
+    <button class="btn" type="submit">Kirim Ucapan</button>
+    <p class="msg" id="wishMsg" role="status"></p>
+  </form>
+  <div id="wishes" class="wishes"></div>
+</section>
+
+<section id="amplop" class="sec rv">
+  <h2>Amplop Digital</h2>
+  <p>Doa restu Anda adalah hadiah terbaik. Bila ingin berbagi tanda kasih, dapat melalui:</p>
+  <div class="events" id="gifts"></div>
+</section>
+
+<footer id="penutup" class="sec rv closing">
+  <p>Merupakan kebahagiaan bagi kami atas kehadiran dan doa restu Anda. Terima kasih.</p>
+  <p class="arab">بَارَكَ اللَّهُ لَكَ وَبَارَكَ عَلَيْكَ وَجَمَعَ بَيْنَكُمَا فِي خَيْرٍ</p>
+  <p class="translit"><i>Bārakallāhu laka wa bāraka ‘alaika wa jama‘a bainakumā fī khair.</i></p>
+  <p>Semoga Allah memberkahimu, melimpahkan keberkahan atasmu, dan menyatukan kalian dalam kebaikan.</p>
+  <p>Wassalamu’alaikum Warahmatullahi Wabarakatuh</p>
+  <h2><span data-b="groomNick"></span> &amp; <span data-b="brideNick"></span></h2>
+</footer>
+</main>
+
+<nav id="nav" hidden aria-label="Navigasi">
+  <a href="#pembukaan">Awal</a><a href="#mempelai">Mempelai</a><a href="#acara">Acara</a><a href="#galeri">Galeri</a><a href="#rsvp">RSVP</a><a href="#ucapan">Ucapan</a>
+</nav>
+<button id="musicBtn" class="fab" hidden aria-label="Putar musik">♪</button>
+<button id="topBtn" class="fab top" hidden aria-label="Kembali ke atas">↑</button>
+<audio id="bgm" loop preload="none">
+  <source src="assets/audio/bima undangan musik.mpeg" type="audio/mpeg">
+</audio>
+<script src="script.js"></script>
+</body>
+</html>
